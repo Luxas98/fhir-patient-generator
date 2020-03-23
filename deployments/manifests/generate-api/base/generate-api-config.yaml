@@ -1,0 +1,13 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  labels:
+    app: generate-api
+    component: fhir
+  name: generate-api-config
+data:
+  GOOGLE_APPLICATION_CREDENTIALS: /etc/secrets/credentials.json
+  ENDPOINTS: generate
+  API_ROUTE: "fhir"
+  API_VERSION: "v1"
+  TOPIC_NAME: "fhir-generate"

@@ -1,0 +1,7 @@
+.idea
+venv
+tf-admin.json
+.terraform
+terraform.tfstate.d
+credentials.json
+__pycache__

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: generate-api
+    component: fhir
+  name: generate-api
+spec:
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: generate-api
+  template:
+    metadata:
+      labels:
+        app: generate-api
+        component: fhir
+    spec:
+      containers:
+      - name: fhir-api
+        image: eu.gcr.io/patient-generator-a78b90f3/generate-api
+        imagePullPolicy: Always
+        command:
+          - /app/entrypoint.sh
+        ports:
+          - name: generate-api
+            containerPort: 5000
+        envFrom:
+          - configMapRef:
+              name: generate-api-config
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+          limits:
+            cpu: 200m
+            memory: 200Mi
