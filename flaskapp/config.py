@@ -38,7 +38,7 @@ DEFERRED_EXTENSIONS = [
     'flaskapp.extensions.api:api',
 ]
 
-PROJECT_ID = 'health-plus-web'
+PROJECT_ID = 'project-id'
 
 
 def get_boolean_env(name, default):
