@@ -9,9 +9,9 @@ WORKDIR /app
 
 COPY flaskapp flaskapp
 COPY gcloudlogging gcloudlogging
-COPY fastavroparsing fastavroparsing
 COPY patientgenerator patientgenerator
 COPY fhir_fastavro fhir_fastavro
+COPY fhir_fastavro/schema schema
 
 COPY wsgi.py wsgi.py
 COPY manage.py manage.py
